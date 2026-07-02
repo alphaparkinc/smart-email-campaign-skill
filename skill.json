@@ -1,0 +1,76 @@
+{
+  "name": "smart-email-campaign-skill",
+  "version": "1.0.0",
+  "description": "Build personalized e-commerce email campaigns with subject line generation, body templates, segmentation targeting, and send-time optimization.",
+  "author": "alphaparkinc",
+  "category": "marketing",
+  "tags": [
+    "email",
+    "campaign",
+    "marketing",
+    "personalization",
+    "e-commerce"
+  ],
+  "inputs": {
+    "campaign_type": {
+      "type": "string",
+      "enum": [
+        "welcome",
+        "abandoned_cart",
+        "winback",
+        "promotional",
+        "newsletter",
+        "post_purchase"
+      ],
+      "description": "Type of email campaign."
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Product or offer name to feature."
+    },
+    "discount_pct": {
+      "type": "number",
+      "description": "Discount percentage to offer (optional)."
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "Brand or store name."
+    },
+    "customer_segment": {
+      "type": "string",
+      "enum": [
+        "new",
+        "loyal",
+        "at_risk",
+        "vip",
+        "general"
+      ],
+      "description": "Target customer segment."
+    },
+    "num_variants": {
+      "type": "integer",
+      "description": "Number of subject line variants to generate.",
+      "default": 3
+    }
+  },
+  "outputs": {
+    "subject_lines": {
+      "type": "array",
+      "description": "Generated subject line variants with predicted open rate scores."
+    },
+    "email_body": {
+      "type": "string",
+      "description": "Complete HTML-ready email body."
+    },
+    "best_send_time": {
+      "type": "string",
+      "description": "Recommended send time based on segment."
+    },
+    "campaign_type": {
+      "type": "string",
+      "description": "Campaign type used."
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
