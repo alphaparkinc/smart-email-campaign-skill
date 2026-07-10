@@ -1,4 +1,4 @@
-# smart-email-campaign-skill
+# genpark-smart-email-campaign-skill
 
 > **GenPark AI Agent Skill** — Build personalized e-commerce email campaigns with subject lines, body copy, and send-time optimization.
 
